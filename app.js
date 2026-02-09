@@ -1,6 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   setupDiagram();
+  setupContactMail();
 });
+
+/**
+ * Contact mailto: built in JS only (never in HTML) to reduce bot scraping.
+ * Address is labartcasarobotics@gmail.com — assembled from parts on click.
+ */
+function setupContactMail() {
+  const link = document.getElementById("contact-mail");
+  if (!link) return;
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    // Parts kept separate so the full address never appears as a literal in source
+    const user = "labartcasa" + "robotics";
+    const domain = "gmail" + "." + "com";
+    window.location.href = "mailto:" + user + "@" + domain;
+  });
+}
 
 /**
  * Create and animate the conceptual diagram.

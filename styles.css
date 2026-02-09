@@ -440,6 +440,17 @@ a.btn-primary {
   opacity: 0.8;
 }
 
+.site-footer .footer-contact {
+  color: var(--text-muted);
+  text-decoration: none;
+  opacity: 0.9;
+}
+.site-footer .footer-contact:hover,
+.site-footer .footer-contact:focus {
+  text-decoration: underline;
+  color: var(--accent-dark);
+}
+
 /* SVG diagram theming */
 
 .diagram-svg {
